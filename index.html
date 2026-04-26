@@ -1,304 +1,708 @@
-<!DOCTYPE html>
+<meta name='viewport' content='width=device-width, initial-scale=1'/><!DOCTYPE html>
 <html lang="bn">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BD TEAM VIP - WinGo 30sec Hack</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+  <title>LEADER RAKIB</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Poppins:wght@600;800&display=swap" rel="stylesheet">
+  
+  <style>
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+      user-select: none; -webkit-tap-highlight-color: transparent;
+    }
 
-    <style>
-        :root {
-            --green: #00ff41;
-            --red: #ff003c;
-            --gold: #ffea00;
-            --bg: #050505;
-        }
-        * {
-            box-sizing: border-box;
-            font-family: Segoe UI, system-ui;
-        }
-        body {
-            margin: 0;
-            background: var(--bg);
-            color: #fff;
-        }
+    body, html {
+      width: 100vw; height: 100vh; overflow: hidden; background: #000;
+      font-family: 'Poppins', sans-serif;
+    }
 
-        /* ================== LOADING SCREEN (VIP MODE RAKIB) ================== */
-        #loading-screen {
-            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background: radial-gradient(circle at center, #0a0a1a 0%, #000000 100%);
-            z-index: 100000;
-            display: flex; flex-direction: column; justify-content: center; align-items: center;
-            transition: opacity 0.6s ease, visibility 0.6s ease;
-        }
-        #loading-screen.hidden {
-            opacity: 0; visibility: hidden; pointer-events: none;
-        }
+    #game-frame {
+      position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+      border: none; z-index: 1;
+    }
 
-        .loading-logo-container {
-            position: relative;
-            width: 130px; height: 130px;
-            margin-bottom: 25px;
-            animation: logoPulse 2s ease-in-out infinite;
-        }
-        .loading-logo-container img {
-            width: 100%; height: 100%;
-            border-radius: 20px;
-            object-fit: cover;
-            box-shadow: 0 0 40px rgba(0, 234, 255, 0.6), 0 0 80px rgba(0, 234, 255, 0.3);
-        }
-        .loading-ring {
-            position: absolute; top: -12px; left: -12px; right: -12px; bottom: -12px;
-            border: 4px solid transparent;
-            border-top: 4px solid #00eaff;
-            border-right: 4px solid #00eaff;
-            border-radius: 50%;
-            animation: ringSpin 1.4s linear infinite;
-        }
-        .loading-ring-2 {
-            position: absolute; top: -22px; left: -22px; right: -22px; bottom: -22px;
-            border: 3px solid transparent;
-            border-bottom: 3px solid #ff0055;
-            border-left: 3px solid #ff0055;
-            border-radius: 50%;
-            animation: ringSpinReverse 2s linear infinite;
-        }
-        @keyframes logoPulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.06); } }
-        @keyframes ringSpin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
-        @keyframes ringSpinReverse { 0% { transform: rotate(360deg); } 100% { transform: rotate(0deg); } }
+    /* --- LOADING SCREEN --- */
+    #loading-screen {
+      position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+      background: radial-gradient(circle at center, #0a0a1a 0%, #000000 100%);
+      z-index: 100000;
+      display: flex; flex-direction: column; justify-content: center; align-items: center;
+      transition: opacity 0.5s ease, visibility 0.5s ease;
+    }
+    
+    #loading-screen.hidden {
+      opacity: 0; visibility: hidden; pointer-events: none;
+    }
 
-        .loading-text {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 19px;
-            color: #00eaff;
-            letter-spacing: 4px;
-            text-shadow: 0 0 20px rgba(0, 234, 255, 0.9);
-            animation: textGlow 1.5s ease-in-out infinite alternate;
-        }
-        @keyframes textGlow {
-            from { text-shadow: 0 0 10px rgba(0, 234, 255, 0.5); }
-            to { text-shadow: 0 0 35px rgba(0, 234, 255, 1); }
-        }
+    .loading-logo-container {
+      position: relative;
+      width: 120px; height: 120px;
+      margin-bottom: 30px;
+      animation: logoPulse 2s ease-in-out infinite;
+    }
 
-        .loading-bar {
-            width: 220px; height: 5px;
-            background: rgba(255,255,255,0.1);
-            border-radius: 3px;
-            margin-top: 20px;
-            overflow: hidden;
-        }
-        .loading-bar-fill {
-            height: 100%;
-            background: linear-gradient(90deg, #00eaff, #ff0055, #00eaff);
-            background-size: 200% 100%;
-            animation: loadingProgress 2.2s ease-in-out infinite, barShine 2s linear infinite;
-            width: 0%;
-        }
-        @keyframes loadingProgress { 0% { width: 0%; } 50% { width: 75%; } 100% { width: 100%; } }
-        @keyframes barShine { 0% { background-position: 200% 0; } 100% { background-position: -200% 0; } }
+    .loading-logo-container img {
+      width: 100%; height: 100%;
+      border-radius: 20px;
+      object-fit: cover;
+      box-shadow: 0 0 40px rgba(0, 234, 255, 0.5), 0 0 80px rgba(0, 234, 255, 0.3);
+    }
 
-        .loading-dots {
-            display: flex; gap: 9px; margin-top: 18px;
-        }
-        .loading-dot {
-            width: 9px; height: 9px;
-            background: #00eaff;
-            border-radius: 50%;
-            animation: dotBounce 1.4s ease-in-out infinite;
-        }
-        .loading-dot:nth-child(2) { animation-delay: 0.2s; }
-        .loading-dot:nth-child(3) { animation-delay: 0.4s; }
-        @keyframes dotBounce {
-            0%, 80%, 100% { transform: scale(0); opacity: 0.4; }
-            40% { transform: scale(1); opacity: 1; }
-        }
+    .loading-ring {
+      position: absolute;
+      top: -10px; left: -10px; right: -10px; bottom: -10px;
+      border: 3px solid transparent;
+      border-top: 3px solid #00eaff;
+      border-right: 3px solid #00eaff;
+      border-radius: 25px;
+      animation: ringSpin 1.5s linear infinite;
+    }
 
-        /* ================== তোমার পুরনো স্টাইল ================== */
-        .header { background: linear-gradient(90deg, #2d44c5, #00d4ff); text-align: center; padding: 12px; font-weight: 900; letter-spacing: 2px; font-size: 18px; display: flex; align-items: center; justify-content: center; gap: 8px; }
-        .card { max-width: 420px; margin: 15px auto; padding: 20px; border-radius: 22px; background: #0b0b0b; box-shadow: 0 0 30px #000; }
-        .title { text-align: center; color: var(--gold); font-weight: 900; font-size: 20px; letter-spacing: 3px; }
-        .game-name { text-align: center; color: #fff; font-size: 16px; margin-top: 5px; }
-        .timer-box { text-align: center; background: #111; border-radius: 16px; padding: 12px; margin: 15px 0; }
-        .timer { font-size: 48px; font-weight: 900; color: var(--gold); }
-        .period { text-align: center; font-size: 14px; color: #aaa; margin-top: 8px; }
-        .size { text-align: center; font-size: 78px; font-weight: 900; margin: 20px 0 10px; min-height: 100px; display: flex; align-items: center; justify-content: center; }
-        .size.small { color: var(--red); text-shadow: 0 0 15px var(--red); }
-        .size.big { color: var(--green); text-shadow: 0 0 15px var(--green); }
-        .hack-label { text-align: center; font-size: 14px; color: var(--gold); font-weight: 900; margin-bottom: 15px; background: rgba(255,234,0,0.2); padding: 6px; border-radius: 10px; }
-        .admin h3 { text-align: center; color: var(--gold); font-size: 15px; }
-        .btn { margin-top: 10px; width: 100%; padding: 16px; background: var(--gold); border: none; border-radius: 14px; font-weight: 900; color: #000; font-size: 17px; }
+    .loading-ring-2 {
+      position: absolute;
+      top: -20px; left: -20px; right: -20px; bottom: -20px;
+      border: 2px solid transparent;
+      border-bottom: 2px solid #ff0055;
+      border-left: 2px solid #ff0055;
+      border-radius: 35px;
+      animation: ringSpinReverse 2s linear infinite;
+    }
 
-        /* Password Screen */
-        #passwordScreen {
-            position: fixed; top: 0; left: 0; right: 0; bottom: 0;
-            background: #050505; display: flex; align-items: center; justify-content: center; z-index: 9999;
-        }
-        .password-box {
-            background: #0b0b0b; padding: 40px 30px; border-radius: 22px; box-shadow: 0 0 40px #000;
-            text-align: center; max-width: 340px; width: 90%;
-        }
-        .password-box h2 { color: var(--gold); }
-        .password-box input {
-            width: 100%; padding: 16px; margin: 15px 0; background: #111; border: 2px solid var(--gold);
-            border-radius: 12px; color: #fff; font-size: 18px; text-align: center;
-        }
-        .password-box button {
-            width: 100%; padding: 16px; background: var(--gold); border: none; border-radius: 14px;
-            font-weight: 900; color: #000; font-size: 17px;
-        }
-        #errorMsg { color: var(--red); margin-top: 15px; }
-    </style>
+    @keyframes logoPulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+
+    @keyframes ringSpin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    @keyframes ringSpinReverse {
+      0% { transform: rotate(360deg); }
+      100% { transform: rotate(0deg); }
+    }
+
+    .loading-text {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 18px;
+      color: #00eaff;
+      letter-spacing: 3px;
+      text-shadow: 0 0 20px rgba(0, 234, 255, 0.8);
+      animation: textGlow 1.5s ease-in-out infinite alternate;
+    }
+
+    @keyframes textGlow {
+      from { text-shadow: 0 0 10px rgba(0, 234, 255, 0.5); }
+      to { text-shadow: 0 0 30px rgba(0, 234, 255, 1), 0 0 50px rgba(0, 234, 255, 0.5); }
+    }
+
+    .loading-bar {
+      width: 200px; height: 4px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 2px;
+      margin-top: 20px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .loading-bar-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #00eaff, #ff0055, #00eaff);
+      background-size: 200% 100%;
+      border-radius: 2px;
+      animation: loadingProgress 2s ease-in-out infinite, barShine 2s linear infinite;
+      width: 0%;
+    }
+
+    @keyframes loadingProgress {
+      0% { width: 0%; }
+      50% { width: 70%; }
+      100% { width: 100%; }
+    }
+
+    @keyframes barShine {
+      0% { background-position: 200% 0; }
+      100% { background-position: -200% 0; }
+    }
+
+    .loading-dots {
+      display: flex; gap: 8px;
+      margin-top: 15px;
+    }
+
+    .loading-dot {
+      width: 8px; height: 8px;
+      background: #00eaff;
+      border-radius: 50%;
+      animation: dotBounce 1.4s ease-in-out infinite;
+    }
+
+    .loading-dot:nth-child(1) { animation-delay: 0s; }
+    .loading-dot:nth-child(2) { animation-delay: 0.2s; }
+    .loading-dot:nth-child(3) { animation-delay: 0.4s; }
+
+    @keyframes dotBounce {
+      0%, 80%, 100% { transform: scale(0); opacity: 0.5; }
+      40% { transform: scale(1); opacity: 1; box-shadow: 0 0 10px #00eaff; }
+    }
+
+    /* --- LOGIN PAGE --- */
+    #login-page {
+      position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+      background: radial-gradient(circle, #1a1a2e, #000); z-index: 99999;
+      display: none; justify-content: center; align-items: center;
+      opacity: 0;
+      animation: fadeIn 0.5s ease forwards;
+    }
+
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+
+    .login-box {
+      background: rgba(10, 15, 30, 0.95); 
+      border: 2px solid #00eaff;
+      padding: 40px 30px; 
+      border-radius: 25px; 
+      text-align: center;
+      box-shadow: 0 0 50px rgba(0, 234, 255, 0.4), inset 0 0 30px rgba(0, 234, 255, 0.1); 
+      width: 90%; 
+      max-width: 350px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .login-box::before {
+      content: '';
+      position: absolute;
+      top: -50%; left: -50%;
+      width: 200%; height: 200%;
+      background: linear-gradient(45deg, transparent, rgba(0, 234, 255, 0.1), transparent);
+      animation: boxShine 3s linear infinite;
+    }
+
+    @keyframes boxShine {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    .login-logo {
+      width: 80px; height: 80px;
+      border-radius: 15px;
+      margin-bottom: 20px;
+      box-shadow: 0 0 30px rgba(0, 234, 255, 0.5);
+      border: 2px solid #00eaff;
+      position: relative;
+      z-index: 1;
+    }
+
+    .login-title {
+      color: #00eaff; 
+      font-family: 'Orbitron', sans-serif; 
+      font-size: 20px;
+      font-weight: 900; 
+      margin-bottom: 25px;
+      text-shadow: 0 0 20px rgba(0, 234, 255, 0.8);
+      position: relative;
+      z-index: 1;
+      letter-spacing: 2px;
+    }
+
+    .login-input {
+      width: 100%; 
+      padding: 15px; 
+      border-radius: 12px; 
+      border: 2px solid rgba(0, 234, 255, 0.3);
+      background: rgba(0, 0, 0, 0.5); 
+      color: #fff; 
+      font-size: 16px; 
+      text-align: center;
+      outline: none; 
+      margin-bottom: 20px; 
+      font-weight: bold;
+      transition: all 0.3s ease;
+      position: relative;
+      z-index: 1;
+    }
+
+    .login-input:focus {
+      border-color: #00eaff;
+      box-shadow: 0 0 20px rgba(0, 234, 255, 0.3);
+    }
+
+    .login-input::placeholder {
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    .login-btn {
+      width: 100%; 
+      padding: 15px; 
+      border-radius: 12px; 
+      border: none;
+      background: linear-gradient(135deg, #00eaff, #00a8ff); 
+      color: #000; 
+      font-size: 16px; 
+      font-weight: 900; 
+      cursor: pointer;
+      position: relative;
+      z-index: 1;
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .login-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 30px rgba(0, 234, 255, 0.4);
+    }
+
+    .login-btn:active {
+      transform: translateY(0);
+    }
+
+    /* --- INJECTOR UI --- */
+    #injector {
+      display: none;
+      position: fixed; top: 15%; left: 50%; transform: translateX(-50%);
+      width: 200px;
+      background: linear-gradient(180deg, #0a0a1a 0%, #000000 100%); 
+      border-radius: 25px;
+      z-index: 9999;
+      padding: 55px 15px 20px; 
+      box-shadow: 0 0 40px rgba(0, 234, 255, 0.4), 0 0 80px rgba(0, 234, 255, 0.2);
+      border: 2px solid rgba(0, 234, 255, 0.5);
+      text-align: center;
+      transition: all 0.3s ease;
+      cursor: grab;
+    }
+
+    #injector:active { cursor: grabbing; }
+
+    /* Floating Profile Picture */
+    .profile-pic-container {
+      position: absolute;
+      top: -45px; left: 50%; transform: translateX(-50%);
+      width: 85px; height: 85px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #00eaff, #ff0055);
+      padding: 3px;
+      box-shadow: 0 0 30px rgba(0, 234, 255, 0.6);
+      animation: profileGlow 2s ease-in-out infinite;
+    }
+
+    @keyframes profileGlow {
+      0%, 100% { box-shadow: 0 0 20px rgba(0, 234, 255, 0.6); }
+      50% { box-shadow: 0 0 40px rgba(0, 234, 255, 0.9), 0 0 60px rgba(255, 0, 85, 0.3); }
+    }
+
+    .profile-pic-container img {
+      width: 100%; height: 100%; border-radius: 50%; object-fit: cover;
+      border: 2px solid #000;
+    }
+
+    /* Period ID */
+    .period-display {
+      font-size: 13px;
+      color: #888;
+      font-weight: 700;
+      margin-bottom: 8px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+    .period-display span { 
+      color: #fff; 
+      text-shadow: 0 0 10px rgba(255,255,255,0.5);
+    }
+
+    /* Timer */
+    .timer-display {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 42px;
+      font-weight: 900;
+      color: #00eaff;
+      text-shadow: 0 0 20px rgba(0, 234, 255, 0.8), 0 0 40px rgba(0, 234, 255, 0.4);
+      margin-bottom: 8px;
+      line-height: 1;
+      animation: timerPulse 1s ease-in-out infinite;
+    }
+
+    @keyframes timerPulse {
+      0%, 100% { text-shadow: 0 0 20px rgba(0, 234, 255, 0.8); }
+      50% { text-shadow: 0 0 30px rgba(0, 234, 255, 1), 0 0 50px rgba(0, 234, 255, 0.5); }
+    }
+
+    .timer-sec { font-size: 18px; color: #888; }
+
+    /* Signal Area */
+    #signalContainer {
+      min-height: 50px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 15px;
+      padding: 10px;
+      background: rgba(255,255,255,0.05);
+      border-radius: 15px;
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .signal-text {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 32px;
+      font-weight: 900;
+      text-transform: uppercase;
+      text-shadow: 0 0 20px currentColor;
+      line-height: 1;
+      animation: signalPulse 0.5s ease-in-out;
+    }
+
+    @keyframes signalPulse {
+      0% { transform: scale(0.8); opacity: 0; }
+      50% { transform: scale(1.1); }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    .sig-big { color: #ff0055; text-shadow: 0 0 30px rgba(255, 0, 85, 0.8); }
+    .sig-small { color: #00ff88; text-shadow: 0 0 30px rgba(0, 255, 136, 0.8); }
+
+    /* Loader Animation */
+    .loader-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .loader {
+      border: 4px solid rgba(0, 234, 255, 0.2);
+      border-top: 4px solid #00eaff;
+      border-right: 4px solid #ff0055;
+      border-radius: 50%;
+      width: 35px;
+      height: 35px;
+      animation: spin 1s linear infinite;
+      box-shadow: 0 0 20px rgba(0, 234, 255, 0.3);
+    }
+
+    @keyframes spin { 
+      0% { transform: rotate(0deg); } 
+      100% { transform: rotate(360deg); } 
+    }
+
+    .loader-text { 
+      font-size: 11px; 
+      color: #00eaff; 
+      font-weight: bold; 
+      letter-spacing: 2px;
+      text-shadow: 0 0 10px rgba(0, 234, 255, 0.5);
+    }
+
+    /* Market Tabs */
+    .inj-modes { 
+      display: flex; gap: 8px; justify-content: center; 
+      background: rgba(255,255,255,0.08); 
+      padding: 8px; 
+      border-radius: 15px;
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .mode-btn { 
+      background: transparent; 
+      border: none; 
+      color: #888; 
+      padding: 8px 12px; 
+      border-radius: 10px; 
+      font-size: 12px; 
+      font-weight: bold; 
+      cursor: pointer; 
+      transition: all 0.3s ease;
+      letter-spacing: 1px;
+    }
+
+    .mode-btn:hover {
+      color: #fff;
+      background: rgba(255,255,255,0.1);
+    }
+
+    .mode-btn.active { 
+      background: linear-gradient(135deg, #00eaff, #00a8ff); 
+      color: #000;
+      box-shadow: 0 5px 20px rgba(0, 234, 255, 0.4);
+    }
+
+    /* Particles Background */
+    .particles {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      pointer-events: none;
+      z-index: 0;
+      overflow: hidden;
+    }
+
+    .particle {
+      position: absolute;
+      width: 4px; height: 4px;
+      background: #00eaff;
+      border-radius: 50%;
+      opacity: 0.5;
+      animation: float 10s infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+      10% { opacity: 0.5; }
+      90% { opacity: 0.5; }
+      100% { transform: translateY(-100vh) rotate(720deg); opacity: 0; }
+    }
+
+  </style>
 </head>
 <body>
 
-    <!-- LOADING SCREEN -->
-    <div id="loading-screen">
-        <div class="loading-logo-container">
-            <div class="loading-ring"></div>
-            <div class="loading-ring-2"></div>
-            <img src="https://i.postimg.cc/2yVV7tsN/ba92c3aaab14d0d9d91d32467e96e8ae.jpg" alt="Logo">
-        </div>
-        <div class="loading-text">AI PREDICTION</div>
-        <div class="loading-bar">
-            <div class="loading-bar-fill"></div>
-        </div>
-        <div class="loading-dots">
-            <div class="loading-dot"></div>
-            <div class="loading-dot"></div>
-            <div class="loading-dot"></div>
-        </div>
+  <div class="particles" id="particles"></div>
+
+  <iframe id="game-frame" src="https://12bdwin24.com/register?inviteCode=686CKKN&from=web"></iframe>
+
+  <div id="loading-screen">
+    <div class="loading-logo-container">
+      <div class="loading-ring"></div>
+      <div class="loading-ring-2"></div>
+      <img src="https://i.postimg.cc/2yVV7tsN/ba92c3aaab14d0d9d91d32467e96e8ae.jpg" alt="Logo">
+    </div>
+    <div class="loading-text">LEADER RAKIB</div>
+    <div class="loading-bar">
+      <div class="loading-bar-fill"></div>
+    </div>
+    <div class="loading-dots">
+      <div class="loading-dot"></div>
+      <div class="loading-dot"></div>
+      <div class="loading-dot"></div>
+    </div>
+  </div>
+
+  <div id="login-page">
+    <div class="login-box">
+      <img src="https://i.postimg.cc/2yVV7tsN/ba92c3aaab14d0d9d91d32467e96e8ae.jpg" alt="Logo" class="login-logo">
+      <div class="login-title">LEADER RAKIB</div>
+      <input type="password" id="passInput" class="login-input" placeholder="ENTER PASSWORD">
+      <button class="login-btn" onclick="checkLogin()">LOGIN</button>
+    </div>
+  </div>
+
+  <div id="injector">
+    <div class="profile-pic-container">
+      <img src="https://i.postimg.cc/2yVV7tsN/ba92c3aaab14d0d9d91d32467e96e8ae.jpg" alt="Profile">
     </div>
 
-    <!-- Password Screen -->
-    <div id="passwordScreen">
-        <div class="password-box">
-            <h2>🔐 VIP MODE RAKIB 🌐</h2>
-            <p>ENTER LOGING KEY-🔑</p>
-            <input type="password" id="passInput" placeholder="Enter Password" autocomplete="off">
-            <button onclick="checkPassword()">Unlock Hack Tool</button>
-            <div id="errorMsg"></div>
-        </div>
+    <div class="period-display">PERIOD: <span id="periodId">----</span></div>
+
+    <div class="timer-display" id="timerContainer"><span id="timer">--</span><span class="timer-sec">s</span></div>
+    
+    <div id="signalContainer">
+        <div class="signal-text" style="color:#aaa;">WAIT</div>
     </div>
 
-    <!-- Main Content -->
-    <div id="mainContent" style="display: none;">
-        <div class="header">
-            <span>BD TEAM VIP HACK SERVER</span>
-            <span style="font-size:22px;">🚀</span>
-        </div>
-
-        <div class="card">
-            <div class="title">BD™ OWNER RAKIB</div>
-            <div class="game-name">WinGo 30sec - Live Market</div>
-
-            <div class="timer-box">
-                <div class="timer" id="timer">00:30</div>
-                <div class="period" id="period">PERIOD: ------</div>
-            </div>
-
-            <div class="hack-label" id="hackLabel">
-                🌐 SERVER CONNECTED ✅
-            </div>
-
-            <div id="size" class="size">WAIT</div>
-
-            <div class="admin">
-                <h3> HACK- UNDER 4 STEP WIN ✅</h3>
-                <button class="btn" onclick="copyK()">ADMIN ID : @BD_TEAM_OWNER</button>
-            </div>
-        </div>
+    <div class="inj-modes">
+      <button class="mode-btn active" id="m30" onclick="setMode(30)">30s</button>
+      <button class="mode-btn" id="m60" onclick="setMode(60)">1M</button>
+      <button class="mode-btn" id="m180" onclick="setMode(180)">3M</button>
     </div>
+  </div>
 
-    <script>
-        // ================== LOADING SCREEN HIDE ==================
-        window.addEventListener('load', function() {
-            setTimeout(() => {
-                document.getElementById('loading-screen').classList.add('hidden');
-            }, 2500);
-        });
+  <script>
+    // ================= PARTICLES =================
+    function createParticles() {
+      const container = document.getElementById('particles');
+      for(let i = 0; i < 20; i++) {
+        const particle = document.createElement('div');
+        particle.className = 'particle';
+        particle.style.left = Math.random() * 100 + '%';
+        particle.style.animationDelay = Math.random() * 10 + 's';
+        particle.style.animationDuration = (10 + Math.random() * 10) + 's';
+        container.appendChild(particle);
+      }
+    }
+    createParticles();
 
-        // ================== PASSWORD ==================
-        const CORRECT_PASSWORD = "vip_mode_by_rakib";
+    // ================= LOADING SCREEN =================
+    window.addEventListener('load', function() {
+      setTimeout(() => {
+        document.getElementById('loading-screen').classList.add('hidden');
+        document.getElementById('login-page').style.display = 'flex';
+      }, 2500);
+    });
 
-        function checkPassword() {
-            const input = document.getElementById("passInput").value.trim();
-            const error = document.getElementById("errorMsg");
+    // ================= LOGIN LOGIC =================
+    function checkLogin() {
+        const pass = document.getElementById('passInput').value.trim();
+        // আপনার নতুন পাসওয়ার্ড এখানে সেট করা হলো
+        if (pass === "123") {
+            document.getElementById('login-page').style.display = 'none';
+            document.getElementById('injector').style.display = 'block';
+            document.getElementById('game-frame').style.display = 'block';
+            speakBangla("সিস্টেম আনলকড! এপিআই ডাটা সিঙ্ক হচ্ছে।");
+            fetchData(true);
+            startSyncTimer();
+        } else {
+            window.location.href = "https://t.me/+n8_E3z1LCDFkZmU1"; 
+        }
+    }
 
-            if (input === CORRECT_PASSWORD) {
-                document.getElementById("passwordScreen").style.display = "none";
-                document.getElementById("mainContent").style.display = "block";
+    // ================= VOICE COMMAND =================
+    function speakBangla(message) {
+      if (!window.speechSynthesis) return;
+      window.speechSynthesis.cancel();
+      const utterance = new SpeechSynthesisUtterance(message);
+      utterance.lang = 'bn-BD';
+      utterance.rate = 0.85;
+      window.speechSynthesis.speak(utterance);
+    }
+
+    // ================= 1 LAKH+ MEGA LOGIC ENGINE =================
+    const MEGA_PATTERN = [];
+    for(let i=0; i<100000; i++) {
+        const val = (Math.sin(i * 1.618) + Math.cos(i * 3.1415)) * 50 + 50;
+        MEGA_PATTERN.push(val > 50 ? 'BIG' : 'SMALL');
+    }
+
+    // ================= API FETCH & SYSTEM =================
+    const API_BASE = 'https://draw.ar-lottery01.com/WinGo';
+    const endpoints = { 30: 'WinGo_30S', 60: 'WinGo_1M', 180: 'WinGo_3M' };
+
+    let currentMode = 30;
+    let lastProcessedPeriod = "";
+    let pendingPrediction = "WAIT";
+    let isAnimating = false;
+
+    function setMode(m) {
+      if(currentMode === m) return;
+      currentMode = m;
+      lastProcessedPeriod = "";
+      document.querySelectorAll('.mode-btn').forEach(b => b.classList.remove('active'));
+      document.getElementById('m' + m).classList.add('active');
+      speakBangla(m + " সেকেন্ড মোড সিলেক্ট করা হয়েছে");
+      
+      document.getElementById('signalContainer').innerHTML = `<div class="signal-text" style="color:#aaa;">WAIT</div>`;
+      document.getElementById('periodId').innerText = "----";
+      fetchData(true);
+    }
+
+    async function fetchData(forceUpdate = false) {
+      const mode = currentMode;
+      try {
+        const res = await fetch(API_BASE + "/" + endpoints[mode] + "/GetHistoryIssuePage.json?t=" + Date.now(), { cache: "no-store" });
+        const data = await res.json();
+
+        if (data.code === 0 && data.data.list && data.data.list.length > 0) {
+          const latest = data.data.list[0];
+          const nextPeriod = (BigInt(latest.issueNumber) + 1n).toString();
+          
+          if (nextPeriod !== lastProcessedPeriod) {
+            lastProcessedPeriod = nextPeriod;
+            document.getElementById('periodId').innerText = nextPeriod.slice(-4);
+
+            let patternIndex = Number(BigInt(nextPeriod) % BigInt(MEGA_PATTERN.length));
+            pendingPrediction = MEGA_PATTERN[patternIndex];
+
+            if(forceUpdate && !isAnimating) {
+                updateSignalUI();
+            }
+          }
+        }
+      } catch (e) { console.error("API Error"); }
+    }
+
+    function updateSignalUI() {
+        const sContainer = document.getElementById('signalContainer');
+        const sigClass = pendingPrediction === 'BIG' ? 'sig-big' : (pendingPrediction === 'SMALL' ? 'sig-small' : '');
+        sContainer.innerHTML = `<div class="signal-text ${sigClass}">${pendingPrediction}</div>`;
+        
+        if(pendingPrediction !== "WAIT") {
+            speakBangla(pendingPrediction === 'BIG' ? "নতুন সিগন্যাল! BIG!" : "নতুন সিগন্যাল! SMALL!");
+        }
+    }
+
+    // ================= TIMER & SYNC LOGIC =================
+    let timerInterval = null;
+    function startSyncTimer() {
+        if(timerInterval) clearInterval(timerInterval);
+        
+        timerInterval = setInterval(() => {
+            const now = new Date();
+            const sec = now.getUTCSeconds();
+            const min = now.getUTCMinutes();
+            let remaining = 0;
+            
+            if (currentMode === 30) remaining = 30 - (sec % 30);
+            else if (currentMode === 60) remaining = 60 - sec;
+            else if (currentMode === 180) remaining = 180 - ((min % 3) * 60 + sec);
+            
+            const tEl = document.getElementById('timer');
+
+            if (remaining === currentMode || remaining === 0) {
+                tEl.textContent = "00";
+                
+                isAnimating = true;
+                document.getElementById('signalContainer').innerHTML = `
+                    <div class="loader-container">
+                        <div class="loader"></div>
+                        <div class="loader-text">ANALYZING...</div>
+                    </div>
+                `;
             } else {
-                error.textContent = "❌ ভুল পাসওয়ার্ড! আবার চেষ্টা করুন";
-                document.getElementById("passInput").value = "";
+                tEl.textContent = remaining < 10 ? "0" + remaining : remaining;
+                
+                if (isAnimating && remaining <= currentMode - 1) {
+                    isAnimating = false;
+                    updateSignalUI();
+                }
             }
-        }
 
-        document.getElementById("passInput").addEventListener("keypress", e => {
-            if (e.key === "Enter") checkPassword();
-        });
+            if (remaining === 3 || remaining === 2) {
+                fetchData();
+            }
 
-        // ================== তোমার হ্যাক লজিক (যেটুকু দিয়েছিলে) ==================
-        let runningPeriod = null;
-        let prediction = null;
-        let lastResult = null;
-        let lossStreak = 0;
-
-        const timerEl = document.getElementById("timer");
-        const periodEl = document.getElementById("period");
-        const sizeEl = document.getElementById("size");
-        const hackLabel = document.getElementById("hackLabel");
-
-        // Timer
-        setInterval(() => {
-            const sec = new Date().getSeconds();
-            const remain = 30 - (sec % 30);
-            timerEl.innerText = "00:" + String(remain).padStart(2, "0");
         }, 1000);
+    }
 
-        // Main Logic
-        setInterval(async () => {
-            try {
-                const res = await fetch("https://draw.ar-lottery01.com/WinGo/WinGo_30S/GetHistoryIssuePage.json");
-                const json = await res.json();
+    // ================= DRAG LOGIC =================
+    const box = document.getElementById('injector');
+    let isDragging = false, startX, startY, initialLeft, initialTop;
 
-                const last = json.data.list[0];
-                const currentIssue = BigInt(last.issueNumber) + 1n;
+    box.addEventListener('mousedown', dragStart);
+    box.addEventListener('touchstart', dragStart, {passive: false});
+    window.addEventListener('mousemove', dragMove);
+    window.addEventListener('touchmove', dragMove, {passive: false});
+    window.addEventListener('mouseup', dragEnd);
+    window.addEventListener('touchend', dragEnd);
 
-                // Result Check
-                if (currentIssue !== runningPeriod && runningPeriod !== null) {
-                    const actualSize = last.number >= 5 ? "BIG" : "SMALL";
+    function dragStart(e) {
+        if(e.target.tagName === 'BUTTON') return;
+        isDragging = true;
+        const clientX = e.clientX || e.touches[0].clientX;
+        const clientY = e.clientY || e.touches[0].clientY;
+        startX = clientX; startY = clientY;
+        const rect = box.getBoundingClientRect();
+        initialLeft = rect.left; initialTop = rect.top;
+        box.style.left = initialLeft + 'px';
+        box.style.top = initialTop + 'px';
+        box.style.transform = 'none';
+    }
 
-                    if (prediction === actualSize) {
-                        lossStreak = 0;
-                        hackLabel.innerHTML = `💥 বলছিলাম না <br>স্টেপ নিয়ে খেলবা আর কোপাবা ঠিক আছে 🛠️`;
-                    } else {
-                        lossStreak++;
-                        hackLabel.innerHTML = `❌ LOSS<br><span style="color:#ffea00">`;
-                    }
-                }
+    function dragMove(e) {
+        if (!isDragging) return;
+        e.preventDefault(); 
+        const clientX = e.clientX || e.touches[0].clientX;
+        const clientY = e.clientY || e.touches[0].clientY;
+        box.style.left = (initialLeft + (clientX - startX)) + 'px';
+        box.style.top = (initialTop + (clientY - startY)) + 'px';
+    }
+    function dragEnd() { isDragging = false; }
 
-                // New Prediction
-                const trend = json.data.list.slice(0, 3).map(x => x.number >= 5 ? "BIG" : "SMALL");
-                let newPrediction = trend.filter(x => x === "BIG").length >= 2 ? "BIG" : "SMALL";
-
-                if (lossStreak >= 1) {
-                    newPrediction = trend[0] === "BIG" ? "BIG" : "SMALL";
-                }
-
-                prediction = newPrediction;
-                runningPeriod = currentIssue;
-
-                periodEl.innerText = "PERIOD: " + currentIssue.toString().slice(-6);
-                sizeEl.className = "size " + prediction.toLowerCase();
-                sizeEl.innerText = prediction;
-
-            } catch (e) {
-                console.error("API Error");
-            }
-        }, 3000);
-
-        function copyK() {
-            alert("ADMIN ID Copied: @BD_TEAM_OWNER");
-        }
-    </script>
+  </script>
 </body>
 </html>
